@@ -1,6 +1,7 @@
 import { RouterProvider } from 'react-router-dom';
 import './App.css';
-import { router } from './RouterPage/FairRouter';
+import router from './RouterPage/FairRouter';
+
 
 function App() {
   return (

@@ -1,17 +1,23 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import img1 from "../../../assets/flybridge.jpg"
 import img2 from "../../../assets/travelimg.jpg"
 import img3 from "../../../assets/travelMohastan.png"
 import img4 from "../../../assets/cleanPic.png"
+import { Link, useLoaderData } from 'react-router-dom';
+import HomeItem from './HomeItems/HomeItem';
 
 
 const Home = () => {
+
+    const dataes = useLoaderData()
+    console.log(dataes)
+
     return (
         <div>
             <div>
-                <div className="carousel w-full h-48">
+                <div className="carousel w-full h-60">
                     <div id="item1" className="carousel-item w-full">
-                        <img src={img1} className="w-full h-56" />
+                        <img src={img1} className="w-full h-60" />
                     </div>
                     <div id="item2" className="carousel-item w-full">
                         <img src={img2} className="w-full h-56" />
@@ -30,36 +36,24 @@ const Home = () => {
                     <a href="#item4" className="btn border-none btn-outline btn-xs">4</a>
                 </div>
             </div>
-            <div className="card w-96 glass">
-                <figure><img src="https://placeimg.com/400/225/arch" alt="car!" /></figure>
-                <div className="card-body">
-                    <h2 className="card-title">Life hack</h2>
-                    <p>How to park your car at your garage?</p>
-                    <div className="card-actions justify-end">
-                        <button className="btn btn-primary">Learn now!</button>
-                    </div>
+            <div>
+                <div className='text-center w-80 mx-auto mb-10'>
+                    <h1 className='font-serif font-semibold'>Attractive Locations for
+                        Travel</h1>
+                        <p className='text-center w-64 mx-auto'>The various reasons for travel include, tourism and leisure chiton, travel for information gathering, travel for people on vacation, volunteering for donors, migration to other residences.</p>
                 </div>
-            </div>
+                <div  className='grid md:grid-cols-2 lg:grid-cols-3 gap-5 mx-auto'>
+                    {
+                        dataes.map(datae => <HomeItem
+                            key={datae._id}
+                            datae={datae}
+                        ></HomeItem>)
+                    }
 
-            <div className="card w-96 glass">
-                <figure><img src="https://placeimg.com/400/225/arch" alt="car!" /></figure>
-                <div className="card-body">
-                    <h2 className="card-title">Life hack</h2>
-                    <p>How to park your car at your garage?</p>
-                    <div className="card-actions justify-end">
-                        <button className="btn btn-primary">Learn now!</button>
-                    </div>
                 </div>
             </div>
-            <div className="card w-96 glass">
-                <figure><img src="https://placeimg.com/400/225/arch" alt="car!" /></figure>
-                <div className="card-body">
-                    <h2 className="card-title">Life hack</h2>
-                    <p>How to park your car at your garage?</p>
-                    <div className="card-actions justify-end">
-                        <button className="btn btn-primary">Learn now!</button>
-                    </div>
-                </div>
+            <div className='m-5 flex justify-center'>
+                <Link to={'/services'} className='btn btn-outline bg-fuchsia-200'>See All</Link>
             </div>
         </div>
     );
