@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { TravelContext } from '../../../ContextPage/AuthContext';
 import logo from '../../../assets/profilePic_prev.png'
+import projectLogo from '../../../assets/apple-touch-icon.png'
 
 const Header = () => {
 
@@ -18,7 +19,8 @@ const Header = () => {
     return (
         <div className="navbar bg-sky-300">
             <div className="flex-1">
-                <Link to={'/'} className="btn btn-ghost normal-case text-xl">Fetching Travel</Link>
+                
+                <Link to={'/'} className="btn btn-ghost normal-case text-xl"><img className='w-10' src={projectLogo} alt="" />Fetching Travel</Link>
             </div>
             <div>
                 <div >
@@ -52,7 +54,7 @@ const Header = () => {
                             <div className="w-10 rounded-full">
                                 <>
                                     {
-                                        user ? <img src={user?.photoURL} /> : <Link to={'/login'}><img src={logo} alt='' /></Link>
+                                        user ? <img  src={user?.photoURL} /> : <Link to={'/login'}><img src={logo} alt='' /></Link>
                                     }
                                 </>
                             </div>

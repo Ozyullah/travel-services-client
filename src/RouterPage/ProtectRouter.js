@@ -9,7 +9,9 @@ const ProtectRouter = ({children}) => {
 
 
     if(loader){
-        return <div>Loading ....</div>
+        return <span className="flex justify-center countdown font-mono text-6xl btn loading">
+        <span style={{"--value":10}}></span>
+      </span>
     }
 
     if(user){
