@@ -1,7 +1,8 @@
 import React from 'react';
+import { Toaster } from 'react-hot-toast';
 
-const MyReviewData = ({ check }) => {
-    const {img, massage, service_name}=check;
+const MyReviewData = ({ check,handleDelete }) => {
+    const {img, massage, service_name, _id}=check;
     return (
         <div>
             <table className="table w-full mt-10">
@@ -33,7 +34,7 @@ const MyReviewData = ({ check }) => {
                                 <button className='btn btn-outline pt-0'>Edite</button>
                             </td>
                             <td>
-                                <button className='btn btn-outline pt-0'>Delete</button>
+                                <button onClick={()=>handleDelete(_id)} className='btn btn-outline pt-0'>Delete <Toaster/></button>
                             </td>
 
                         </tr>
