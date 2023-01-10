@@ -45,11 +45,11 @@ const router = createBrowserRouter([
             },
             {
                 path:'/myreview',
-                element:<Myreview></Myreview>
+                element:<ProtectRouter><Myreview></Myreview></ProtectRouter>
             },
             {
                 path:'/addservices',
-                element:<CreateServices></CreateServices>
+                element:<ProtectRouter><CreateServices></CreateServices></ProtectRouter>
             }
         ]
     }

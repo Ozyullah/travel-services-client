@@ -4,11 +4,13 @@ import { FaGithub } from 'react-icons/fa';
 import { FcGoogle } from 'react-icons/fc';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { TravelContext } from '../../../ContextPage/AuthContext';
+import useTitle from '../../../hooks/useTitle';
 
 const Login = () => {
     const provider =new GoogleAuthProvider()
     const {user, logInWithEmailandPassword, signInWithGoogle}=useContext(TravelContext);
 
+    useTitle('Login')
     const navigate=useNavigate();
     const location =useLocation();
 

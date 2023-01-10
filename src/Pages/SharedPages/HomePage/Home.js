@@ -5,12 +5,15 @@ import img3 from "../../../assets/travelMohastan.png"
 import img4 from "../../../assets/cleanPic.png"
 import { Link, useLoaderData } from 'react-router-dom';
 import HomeItem from './HomeItems/HomeItem';
+import useTitle from '../../../hooks/useTitle';
 
 
 const Home = () => {
 
     const dataes = useLoaderData()
     console.log(dataes)
+
+    useTitle('Home')
 
     return (
         <div>

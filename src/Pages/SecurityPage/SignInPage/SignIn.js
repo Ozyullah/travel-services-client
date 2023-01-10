@@ -4,10 +4,13 @@ import { FcGoogle } from 'react-icons/fc'
 import { FaGithub } from 'react-icons/fa';
 import { GoogleAuthProvider } from 'firebase/auth';
 import { Link } from 'react-router-dom';
+import useTitle from '../../../hooks/useTitle';
 
 const SignIn = () => {
     const provider =new GoogleAuthProvider();
     const { addedUserWithEmailPassword, signInWithGoogle } = useContext(TravelContext)
+
+    useTitle('Signin')
 
     const handleSignIn = event => {
         event.preventDefault();
