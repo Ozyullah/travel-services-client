@@ -2,7 +2,6 @@ import React from 'react';
 
 const MyReviewData = ({ check }) => {
     const {email, massage, photo, name}=check;
-    console.log(check)
     return (
         <div>
             <table className="table w-full">

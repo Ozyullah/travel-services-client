@@ -19,6 +19,7 @@ const AuthContext = ({children}) => {
 
 
     const signInWithGoogle =(provider)=>{
+        setLoader(true)
         return signInWithPopup(auth, provider)
     }
 
@@ -30,6 +31,7 @@ const AuthContext = ({children}) => {
 
 
     const logOut =()=>{
+        setLoader(true)
         return signOut(auth)
     }
 
