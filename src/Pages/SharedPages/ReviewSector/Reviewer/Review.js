@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { toast } from 'react-hot-toast';
+import { toast, Toaster } from 'react-hot-toast';
 import { Link, useLoaderData } from 'react-router-dom';
 import { BiArrowBack } from 'react-icons/bi'
 import { TravelContext } from '../../../../ContextPage/AuthContext';
@@ -7,12 +7,15 @@ import { TravelContext } from '../../../../ContextPage/AuthContext';
 const Review = () => {
 
     const { user } = useContext(TravelContext)
-    const { name, img, _id, service_id } = useLoaderData();
+    const { name, img, _id} = useLoaderData();
     console.log(_id)
-    console.log()
 
     const handleReviews = event => {
-        event.preventDefault();
+        if(!user){
+            toast.error('Please at first Login then write review')
+            return(false)
+        }
+        event.preventDefault(); 
         const form = event.target;
         const name = `${form.firstName.value} ${form.lastName.value}`;
         const massage = form.massage.value;
@@ -21,14 +24,15 @@ const Review = () => {
 
         form.reset('')
 
-
+      
         const review = {
             name: name,
-            service_id,
+            service_id: _id,
             massage: massage,
             email,
             photo
         }
+
 
         fetch('http://localhost:5000/reviews',
             {
@@ -70,7 +74,7 @@ const Review = () => {
                 </form>
             </div>
 
-            <Link to={'/services'} className='btn btn-outline border-gray-300 m-5 px-6'><BiArrowBack/></Link>
+            <Link to={'/services'} className='btn btn-outline border-gray-300 m-5 px-6'><BiArrowBack/><Toaster/></Link>
         </div>
     );
 };
