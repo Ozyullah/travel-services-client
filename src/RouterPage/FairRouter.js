@@ -5,6 +5,7 @@ import SignIn from '../Pages/SecurityPage/SignInPage/SignIn';
 import Home from '../Pages/SharedPages/HomePage/Home';
 import Myreview from '../Pages/SharedPages/ReviewSector/Reviewer/PersonReiew/Myreview';
 import Review from '../Pages/SharedPages/ReviewSector/Reviewer/Review';
+import CreateServices from '../Pages/SharedPages/ServicesPage/AddServicesSector/CreateServices';
 import Services from '../Pages/SharedPages/ServicesPage/Services/Services';
 import ServicesDetails from '../Pages/SharedPages/ServicesPage/ServicesDetails/ServicesDetails';
 import ProtectRouter from './ProtectRouter';
@@ -44,7 +45,11 @@ const router = createBrowserRouter([
             },
             {
                 path:'/myreview',
-                element:<ProtectRouter><Myreview></Myreview></ProtectRouter>
+                element:<Myreview></Myreview>
+            },
+            {
+                path:'/addservices',
+                element:<CreateServices></CreateServices>
             }
         ]
     }

@@ -25,7 +25,7 @@ const Header = () => {
                     {
                         user?.uid ? <>
                             <Link className='font-semibold m-3 t' to={'/myreview'}>My Reviews</Link>
-                            <Link className='font-semibold mr-5' to={''}>Add Services</Link>
+                            <Link className='font-semibold mr-5' to={'/addservices'}>Add Services</Link>
                         </> : ''
                     }
                 </div>

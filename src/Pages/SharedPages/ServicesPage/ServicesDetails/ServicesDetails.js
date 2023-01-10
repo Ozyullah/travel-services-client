@@ -4,6 +4,7 @@ import { Link, useLoaderData } from 'react-router-dom';
 import './ServicesDetails.css'
 import ServicesReviews from './ServicesReviews';
 
+
 const ServicesDetails = () => {
 
     const [aimes, setAimes]=useState([])
@@ -47,7 +48,7 @@ const ServicesDetails = () => {
                 <div>
 
                     {
-                        aimes.map(aime =><ServicesReviews 
+                        aimes.map(aime =><ServicesReviews
                             key={aime._id}
                             aime={aime}
                         ></ServicesReviews>)

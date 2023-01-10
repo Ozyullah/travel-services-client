@@ -17,7 +17,7 @@ const Review = () => {
         }
         event.preventDefault(); 
         const form = event.target;
-        const name = `${form.firstName.value} ${form.lastName.value}`;
+        const name1 = `${form.firstName.value} ${form.lastName.value}`;
         const massage = form.massage.value;
         const email = user?.email
         const photo = user?.photoURL
@@ -26,11 +26,14 @@ const Review = () => {
 
       
         const review = {
-            name: name,
+            name: name1,
             service_id: _id,
             massage: massage,
             email,
-            photo
+            photo,
+            service_name:name,
+            img
+
         }
 
 

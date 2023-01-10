@@ -1,52 +1,41 @@
 import React from 'react';
 
 const MyReviewData = ({ check }) => {
-    const {email, massage, photo, name}=check;
+    const {img, massage, service_name}=check;
     return (
         <div>
-            <table className="table w-full">
-                    <thead>
-                        <tr>
-                            <th>
-                                <label>
-                                    <input type="checkbox" className="checkbox" />
-                                </label>
-                            </th>
-                            <th>Name</th>
-                            <th>Job</th>
-                            <th>Favorite Color</th>
-                            <th></th>
-                        </tr>
-                    </thead>
+            <table className="table w-full mt-10">
                     <tbody>
-                        <tr>
+                        <tr className='flex justify-between'>
                             <th>
                                 <label>
                                     <input type="checkbox" className="checkbox" />
                                 </label>
                             </th>
                             <td>
-                                <div className="flex items-center space-x-3">
+                                <div className="flex justify-start space-x-3 ">
                                     <div className="avatar">
                                         <div className="mask mask-squircle w-12 h-12">
-                                            <img src={photo} />
+                                            <img src={img} />
                                         </div>
                                     </div>
                                     <div>
-                                        <div className="font-bold">Hart Hagerty</div>
+                                        <div className="font-bold">{service_name}</div>
                                         <div className="text-sm opacity-50">United States</div>
                                     </div>
                                 </div>
                             </td>
-                            <td>
-                                Zemlak, Daniel and Leannon
-                                <br />
-                                <span className="badge badge-ghost badge-sm">Desktop Support Technician</span>
+                            <td className='mr-10'>
+                                {massage}
+                               
                             </td>
-                            <td>Purple</td>
-                            <th>
-                                <button className="btn btn-ghost btn-xs">details</button>
-                            </th>
+                            <td>
+                                <button className='btn btn-outline pt-0'>Edite</button>
+                            </td>
+                            <td>
+                                <button className='btn btn-outline pt-0'>Delete</button>
+                            </td>
+
                         </tr>
                         
                         

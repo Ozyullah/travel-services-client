@@ -18,12 +18,12 @@ const Myreview =() => {
     return (
         <div>
             <div className="overflow-x-auto w-full">
-                {/* {
+                {
                     sightes.map(check => <MyReviewData
                         key={check._id}
                         check={check}
                     ></MyReviewData>)
-                } */}
+                }
             </div>
         </div>
     );

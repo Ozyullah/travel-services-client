@@ -5,6 +5,8 @@ import { TravelContext } from '../ContextPage/AuthContext';
 const ProtectRouter = ({ Children }) => {
     const {user, loader}=useContext(TravelContext)
     const location =useLocation()
+
+    
     if(loader){
         return <div>Loading ....</div>
     }
