@@ -18,12 +18,28 @@ const Header = () => {
     }
     return (
         <div className="navbar bg-sky-300">
+            {/* Responcive button section */}
+            <div className="dropdown dropdown-start">
+                <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
+                    <div className="w-10 rounded-full">
+                        <img className='w-10' src={projectLogo} alt="" />
+                    </div>
+                </label>
+                <ul tabIndex={5} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
+                    <li>
+                        <Link className='font-semibold m-3 t' to={'/myreview'}>My Reviews</Link>
+                    </li>
+                    <li><Link className='font-semibold mr-5' to={'/addservices'}>Add Services</Link></li>
+                </ul>
+            </div>
+            {/* Responcive button section */}
+
             <div className="flex-1">
-                
-                <Link to={'/'} className="btn btn-ghost normal-case text-xl"><img className='w-10' src={projectLogo} alt="" />Fetching Travel</Link>
+
+                <Link to={'/'} className="btn btn-ghost normal-case text-xl">Fetching Travel</Link>
             </div>
             <div>
-                <div >
+                <div className='md:hidden hidden'>
                     {
                         user?.uid ? <>
                             <Link className='font-semibold m-3 t' to={'/myreview'}>My Reviews</Link>
@@ -54,7 +70,7 @@ const Header = () => {
                             <div className="w-10 rounded-full">
                                 <>
                                     {
-                                        user ? <img  src={user?.photoURL} /> : <Link to={'/login'}><img src={logo} alt='' /></Link>
+                                        user ? <img src={user?.photoURL} /> : <Link to={'/login'}><img src={logo} alt='' /></Link>
                                     }
                                 </>
                             </div>
