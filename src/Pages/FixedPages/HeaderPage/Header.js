@@ -17,7 +17,7 @@ const Header = () => {
             .catch(() => { })
     }
     return (
-        <div className="navbar bg-sky-300">
+        <div className="navbar bg-sky-300 sticky">
             {/* Responcive button section */}
             <div className="dropdown dropdown-start">
                 <label tabIndex={0} className="btn btn-ghost btn-circle avatar">

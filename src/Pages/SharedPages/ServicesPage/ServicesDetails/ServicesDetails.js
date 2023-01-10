@@ -33,7 +33,7 @@ const ServicesDetails = () => {
                             </div>
                             <div>
                                 {
-                                    facility.map(hit => <div key={hit.name}>
+                                    facility?.map(hit => <div key={hit.name}>
                                         <h3 className='font-bold mb-3 mt-3'>{hit.name} :</h3>
                                         <p>{hit.details}</p>
 

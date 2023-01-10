@@ -1,5 +1,6 @@
 import { createBrowserRouter } from 'react-router-dom';
 import Main from '../LayOut/Main';
+import ErrorPage from '../Pages/FixedPages/ErrorPage';
 import Login from '../Pages/SecurityPage/LoginPage/Login';
 import SignIn from '../Pages/SecurityPage/SignInPage/SignIn';
 import Home from '../Pages/SharedPages/HomePage/Home';
@@ -52,6 +53,10 @@ const router = createBrowserRouter([
                 element:<ProtectRouter><CreateServices></CreateServices></ProtectRouter>
             }
         ]
+    },
+    {
+        path:'/*',
+        element:<ErrorPage></ErrorPage>
     }
 ])
 

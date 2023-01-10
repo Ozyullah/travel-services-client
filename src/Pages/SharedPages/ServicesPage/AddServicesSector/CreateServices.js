@@ -52,9 +52,10 @@ const CreateServices = () => {
                         <input type="text" name='price' placeholder="Enter Price" className="input input-bordered w-full max-w-xs" required/>
                         <input type="text" name='facility' placeholder="Enter Facility"  className="input input-bordered w-full max-w-xs" required/>
 
-                        <textarea name='details' className="textarea textarea-bordered h-24" placeholder="Write a Descriptions" required></textarea>
+                        <textarea name='details' className="textarea textarea-bordered h-24 w-80" placeholder="Write a Descriptions" required></textarea>
                     </div>
-                    <button className='w-full btn btn-outline m-5'>Submite<Toaster/></button>
+                    <button className='w-80 btn btn-outline 
+                     mt-5 mb-5'>Submite<Toaster/></button>
                 </form>
         </div>
     );

@@ -56,7 +56,7 @@ const Review = () => {
 
     }
     return (
-        <div>
+        <div className='review-section'>
             <div className=' w-96 mx-auto'>
                 <div>
                     <div className='flex justify-center mt-8'>
@@ -65,15 +65,15 @@ const Review = () => {
                     <h4 className='text-center m-4'>Name: {name}</h4>
                 </div>
                 <form action="" onSubmit={handleReviews}>
-                    <div className='grid md:grid-cols-2 lg:grid-cols-2 gap-5'>
+                    <div className='grid md:grid-cols-2 lg:grid-cols-2 gap-5 ml-9'>
                         <input type="text" name='firstName' placeholder="Enter firstname" className="input input-bordered w-full max-w-xs" required />
                         <input type="text" name='lastName' placeholder="Enter Lastname" className="input input-bordered w-full max-w-xs" />
                         <input type="text" placeholder="Type here" value={user?.photoURL} className="input input-bordered w-full max-w-xs" readOnly />
                         <input type="email" placeholder="Type here" value={user?.email} className="input input-bordered w-full max-w-xs" readOnly />
 
-                        <textarea name='massage' className="textarea textarea-bordered h-24" placeholder="Write Your Opinion" required></textarea>
+                        <textarea name='massage' className="textarea textarea-bordered h-20 w-44" placeholder="Write Your Opinion" required></textarea>
                     </div>
-                    <button className='w-full btn btn-outline m-5'>Submite</button>
+                    <button className='w-80 btn btn-outline mt-5 ml-9'>Submite</button>
                 </form>
             </div>
 
