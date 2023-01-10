@@ -39,7 +39,7 @@ const Header = () => {
                 <Link to={'/'} className="btn btn-ghost normal-case text-xl">Fetching Travel</Link>
             </div>
             <div>
-                <div className='md:hidden hidden'>
+                <div className='hidden lg:display'>
                     {
                         user?.uid ? <>
                             <Link className='font-semibold m-3 t' to={'/myreview'}>My Reviews</Link>
