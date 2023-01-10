@@ -1,5 +1,5 @@
-import React, { createContext, useState } from 'react';
-import { createUserWithEmailAndPassword, getAuth } from "firebase/auth"
+import React, { createContext, useEffect, useState } from 'react';
+import { createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut } from "firebase/auth"
 import app from '../firebase/firebase.confige'
 
 
@@ -12,11 +12,47 @@ const AuthContext = ({children}) => {
     const [loader, setLoader]=useState(true);
 
     const addedUserWithEmailPassword =(email, password)=>{
+        setLoader(true)
         return createUserWithEmailAndPassword(auth, email, password)
     }
 
+
+
+    const signInWithGoogle =(provider)=>{
+        return signInWithPopup(auth, provider)
+    }
+
+
+    const logInWithEmailandPassword =(email, password)=>{
+        setLoader(true)
+        return signInWithEmailAndPassword(auth, email, password)
+    }
+
+
+    const logOut =()=>{
+        return signOut(auth)
+    }
+
+
+
+    useEffect(()=>{
+        const unSubscribe =onAuthStateChanged(auth, (currentUser)=>{
+            setUser(currentUser);
+            setLoader(false);
+        });
+        
+        return ()=>{
+            unSubscribe();
+        }
+    },[])
+
     const TravelValue={
-        addedUserWithEmailPassword
+        addedUserWithEmailPassword,
+        user,
+        loader,
+        signInWithGoogle,
+        logInWithEmailandPassword,
+        logOut
     }
     return (
         <TravelContext.Provider value={TravelValue}>

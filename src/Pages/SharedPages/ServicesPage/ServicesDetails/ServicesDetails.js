@@ -1,11 +1,21 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import {BsArrowLeft} from 'react-icons/bs'
 import { Link, useLoaderData } from 'react-router-dom';
 import './ServicesDetails.css'
 
 const ServicesDetails = () => {
 
-    const { img, descriptions, facility, name, price, service_id } = useLoaderData()
+    const [aimes, setAimes]=useState([])
+
+    const { img, descriptions, facility, name, price, _id } = useLoaderData()
+
+    useEffect(()=>{
+        fetch(`http://localhost:5000/reviewcoll?service_id=${_id}`)
+        .then(res => res.json())
+        .then(info => setAimes(info))
+    },[])
+
+    console.log(aimes,_id)
 
     return (
         <div className='m-10'>
@@ -34,7 +44,7 @@ const ServicesDetails = () => {
 
                 {/* Review Sections Started */}
                 <div>
-                    
+                   <Link to={`/review/${_id}`}>Add Review</Link> 
                 </div>
             </div>
             <Link className='btn btn-outline mt-7' title='Back to Services route' to={'/services'}><BsArrowLeft/></Link>
